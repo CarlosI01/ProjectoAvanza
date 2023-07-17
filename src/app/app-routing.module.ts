@@ -1,13 +1,17 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
-import { AppLayoutComponent } from "./layout/app.layout.component";
+import { AppLayoutComponent as UserLayoutComponent } from './layout/app.layout.component';
+import { AppLayoutComponent as AdminLayoutComponent} from './admin/app.layout.component';
+
+import { AppConfig } from './admin/app.config';
+
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
-                path: '', component: AppLayoutComponent,
+                path: '', component: AppConfig.userRole === 'admin' ? AdminLayoutComponent : UserLayoutComponent,
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
@@ -17,8 +21,10 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
                 ]
             },
+            
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
+            { path: 'admin', loadChildren: () => import('./modules/components/admin/admin.module').then(m => m.AdminModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
