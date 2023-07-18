@@ -25,6 +25,11 @@ import { AppConfig } from './admin/app.config';
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             { path: 'admin', loadChildren: () => import('./modules/components/admin/admin.module').then(m => m.AdminModule) },
+            { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
+            { path: 'planes', loadChildren: () => import('./modules/home/planes/planes.module').then(m => m.PlanesModule) },
+            { path: 'nosotros', loadChildren: () => import('./modules/home/nosotros/nosotros.module').then(m => m.NosotrosModule) },
+            { path: 'register/client', loadChildren: () => import('./modules/home/auth/client/client.module').then(m => m.ClientModule) },
+            { path: 'home/loguin', loadChildren: () => import('./modules/home/auth/loguin/loguin.module').then(m => m.LoguinModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })

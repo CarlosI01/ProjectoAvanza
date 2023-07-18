@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientRoutingModule } from './client-routing.module';
-import { RegisterClientComponent } from './register-client/register-client.component';
+import { RegisterClientComponent } from './register-client.component';
 
 
 @NgModule({

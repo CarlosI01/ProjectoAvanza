@@ -12,11 +12,10 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-import { HomeComponent } from './modules/components/Home/home.component';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, HomeComponent
+        AppComponent, NotfoundComponent
     ],
     imports: [
         AppRoutingModule,
