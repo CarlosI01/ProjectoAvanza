@@ -1,3 +1,3 @@
 export const AppConfig = {
-    userRole: 'zc' // Rol de usuario por defecto
+    userRole: 'admin' // Rol de usuario por defecto
   };
