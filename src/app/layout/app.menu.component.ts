@@ -17,7 +17,7 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Inicio',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/admin/admin'] }
+                    { label: 'Inicio', icon: 'pi pi-fw pi-home', routerLink: ['/admin/admin'] }
                 ]
             },
             {
@@ -30,7 +30,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Prime Blocks',
                 items: [
                     { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', routerLink: ['/blocks'], badge: 'NEW' },
-                    { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: ['https://www.primefaces.org/primeblocks-ng'], target: '_blank' },
+                    // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: ['https://www.primefaces.org/primeblocks-ng'], target: '_blank' },
                 ]
             },
             {
